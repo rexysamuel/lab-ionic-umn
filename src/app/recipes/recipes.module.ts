@@ -23,4 +23,5 @@ const routes: Routes = [
   ],
   declarations: [RecipesPage]
 })
+
 export class RecipesPageModule {}

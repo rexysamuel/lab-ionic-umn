@@ -17,4 +17,13 @@ export class RecipesPage implements OnInit {
     this.recipes = this.recipesService.getAllRecipes();
   }
 
+  tampilDetail(id){
+    console.log(this.recipesService.getRecipe(id));
+  }
+
+  hapusRecipe(id){
+    var index = this.recipesService.deleteRecipe(id);
+    this.recipes.splice(index-1,1);
+  }
+
 }

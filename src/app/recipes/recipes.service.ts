@@ -31,13 +31,30 @@ export class RecipesService {
   constructor() { }
 
   getAllRecipes(){
-    return [...this.recipes];}
+    return [...this.recipes];
+  }
 
-    getRecipe(recipeId: string){
-      return{
-        ...this.recipes.find(recipe => {
+  getRecipe(recipeId: string){
+    return {
+        ...this.recipes.find(recipe =>{
             return recipe.id === recipeId;
         })
-      };
-    }
+    };
+  }
+
+  deleteRecipe(recipeId: string){
+    var i = 0;
+    var index = -1;
+
+    this.recipes.forEach(element=>{
+      i++;
+      if(element.id == recipeId){
+        index = i;
+      }
+      
+    });
+    
+    return index;
+};
+
 }
