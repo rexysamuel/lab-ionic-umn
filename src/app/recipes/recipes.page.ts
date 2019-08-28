@@ -21,9 +21,8 @@ export class RecipesPage implements OnInit {
     console.log(this.recipesService.getRecipe(id));
   }
 
-  hapusRecipe(id){
-    var index = this.recipesService.deleteRecipe(id);
-    this.recipes.splice(index-1,1);
+  ionViewWillEnter(){
+    this.recipes = this.recipesService.getAllRecipes();
   }
 
 }

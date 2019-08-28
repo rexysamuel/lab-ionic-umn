@@ -26,6 +26,18 @@ export class RecipesService {
       imageUrl: 'https://img.taste.com.au/Wf8mL7LT/w720-h480-cfill-q80/taste/2016/11/jessica-39581-2.jpeg',
       ingredients: ['Dough', 'Tomato Sauce', 'Bumbu Kecap', 'Saus Kacang']
     },
+    {
+      id: 'r4',
+      title: 'Chicken Express (Ayam Om)',
+      imageUrl: 'https://radio.umn.ac.id/wp-content/uploads/2018/03/unnamed-10-300x200.jpg',
+      ingredients: ['Ayam', 'Minyak', 'Mayonaise', 'Nasi', 'Saus Sambal']
+    },
+    {
+      id: 'r5',
+      title: 'Siomay Batagor',
+      imageUrl: 'https://radio.umn.ac.id/wp-content/uploads/2018/03/unnamed-11-300x200.jpg',
+      ingredients: ['Siomay', 'Batagor', 'Saus Kacang']
+    },
   ];
 
   constructor() { }
@@ -43,18 +55,11 @@ export class RecipesService {
   }
 
   deleteRecipe(recipeId: string){
-    var i = 0;
-    var index = -1;
-
-    this.recipes.forEach(element=>{
-      i++;
-      if(element.id == recipeId){
-        index = i;
-      }
-      
-    });
-    
-    return index;
+    var filtered = this.recipes.filter(recipe=>{
+      return recipe.id !== recipeId
+    })
+    this.recipes = filtered;
+    return this.recipes;
 };
 
 }
