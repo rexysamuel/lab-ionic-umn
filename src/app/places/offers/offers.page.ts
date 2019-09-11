@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MenuController, NavController } from '@ionic/angular';
+import { MenuController } from '@ionic/angular';
 
 import { PlacesService } from '../places.service';
 import { Place } from '../places.model';
@@ -11,12 +11,15 @@ import { Place } from '../places.model';
   styleUrls: ['./offers.page.scss'],
 })
 export class OffersPage implements OnInit {
-  loadedPlaces: Place[];
+  offers: Place[];
 
-  constructor(private menuCtrl: MenuController, private placesService: PlacesService) { }
+  constructor(
+    private menuCtrl: MenuController,
+    private placesService: PlacesService
+  ) { }
 
   ngOnInit() {
-    this.loadedPlaces = this.placesService.places;
+    this.offers = this.placesService.places;
   }
 
   onOpenMenu(){
