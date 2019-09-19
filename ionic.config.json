@@ -1,5 +1,7 @@
 {
-  "name": "umn-homes",
-  "integrations": {},
+  "name": "WORKBENCH2_REXYSAMUEL_00000014136",
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
