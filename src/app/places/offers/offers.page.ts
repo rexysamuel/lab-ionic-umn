@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-
-import { MenuController, NavController } from '@ionic/angular';
-
 import { PlacesService } from '../places.service';
 import { Place } from '../places.model';
+import { IonItemSliding } from '@ionic/angular';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-offers',
@@ -11,16 +10,14 @@ import { Place } from '../places.model';
   styleUrls: ['./offers.page.scss'],
 })
 export class OffersPage implements OnInit {
-  loadedPlaces: Place[];
-
-  constructor(private menuCtrl: MenuController, private placesService: PlacesService) { }
+  loadedPlaces : Place[];
+  constructor(private placesService: PlacesService,private router:Router) { }
 
   ngOnInit() {
     this.loadedPlaces = this.placesService.places;
   }
-
-  onOpenMenu(){
-    this.menuCtrl.toggle('m1');
+  editOffer(id:String,slidingItem: IonItemSliding){
+    slidingItem.close();
+    this.router.navigate(['/','places','tabs','offers','edit',id]);
   }
-
 }
