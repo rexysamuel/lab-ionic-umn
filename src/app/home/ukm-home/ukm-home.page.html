@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>UMN UKM</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-card *ngFor="let home of loadedHome">
+          <ion-card-header>
+            <ion-card-title>{{ home.title }}</ion-card-title>
+            <p>{{ home.description }}</p>
+          </ion-card-header>
+          <ion-item>
+            <ion-button slot="end" color="primary" fill="outline" (click)="confirmAlert(home)">Join</ion-button>
+          </ion-item>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

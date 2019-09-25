@@ -5,16 +5,22 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { IonicModule } from '@ionic/angular';
 
-import { HomePage } from './home.page';
-import { HomeRoutingModule } from './home-routing.module';
+import { UkmHomePage } from './ukm-home.page';
+
+const routes: Routes = [
+  {
+    path: '',
+    component: UkmHomePage
+  }
+];
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomeRoutingModule
+    RouterModule.forChild(routes)
   ],
-  declarations: [HomePage]
+  declarations: [UkmHomePage]
 })
-export class HomePageModule {}
+export class UkmHomePageModule {}
