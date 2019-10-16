@@ -1,11 +1,20 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { AuthGuard } from './auth/auth.guard';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'calon-gebetan', pathMatch: 'full' },
-  { path: 'calon-gebetan', loadChildren: './calon-gebetan/calon-gebetan.module#CalonGebetanPageModule' },
-  { path: 'target-gebetan', loadChildren: './target-gebetan/target-gebetan.module#TargetGebetanPageModule' },
-  { path: 'profil', loadChildren: './profil/profil.module#ProfilPageModule' },
+  { path: '', redirectTo: 'places', pathMatch: 'full' },
+  { path: 'auth', loadChildren: './auth/auth.module#AuthPageModule' },
+  {
+    path: 'places',
+    loadChildren: './places/places.module#PlacesPageModule',
+    canLoad: [AuthGuard]
+  },
+  {
+    path: 'bookings',
+    loadChildren: './bookings/bookings.module#BookingsPageModule',
+    canLoad: [AuthGuard]
+  },
 ];
 
 @NgModule({

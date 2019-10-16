@@ -1,7 +1,5 @@
 {
-  "name": "UTS_REXYSAMUEL_00000014136",
-  "integrations": {
-    "cordova": {}
-  },
+  "name": "umn-homes",
+  "integrations": {},
   "type": "angular"
 }
