@@ -1,7 +1,7 @@
 {
-  "name": "WORKBENCH2_REXYSAMUEL_00000014136",
+  "name": "umn-homes",
   "integrations": {
-    "capacitor": {}
+    "cordova": {}
   },
   "type": "angular"
 }
